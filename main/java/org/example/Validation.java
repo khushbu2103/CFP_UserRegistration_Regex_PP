@@ -40,6 +40,9 @@ class UserRegistration {
                 case 7:
                     ob.preDefinedPasswordRule3();
                     break;
+                case 8:
+                    ob.preDefinedPasswordRule4();
+                    break;
                 default:
                     break;
             }
@@ -158,5 +161,21 @@ public class Validation {
             System.out.println(password3 + ": Invalid password.");
         }
         return Pattern.matches(regex, password3);
+    }
+    public static boolean preDefinedPasswordRule4()
+    {
+        String password4 = "Ka7huyK79#A";
+        //String[] inputs = {"K9we&tyu#i", "Khn9Kh%bhp", "kjhgftv"};
+        String regex = "^(?=(?:[^!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]){1}[^!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$).*[^!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]*$";
+        //String regex = "^(?=[0-9]*[A-Z])(?=[a-zA-z]*[0-9]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(password4).matches()) {
+            System.out.println( password4 + ": Valid email!");
+        }
+        else
+        {
+            System.out.println(password4 + ": Invalid email.");
+        }
+        return Pattern.matches(regex, password4);
     }
 }
