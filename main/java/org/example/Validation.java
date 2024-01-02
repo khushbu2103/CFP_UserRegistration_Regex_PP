@@ -125,7 +125,6 @@ public class Validation {
     public static boolean preDefinedPasswordRule1()
     {
         String password = "qw9&ertyui";
-        //String[] inputs = {"qwertyui", "vhnhbhgty", "kjhgftv"};
         String regex = "^.{8,}$";
         Pattern pattern = Pattern.compile(regex);
         if (pattern.matcher(password).matches())
@@ -141,7 +140,6 @@ public class Validation {
     public static boolean preDefinedPasswordRule2()
     {
         String password2 = "Kwertyui";
-        //String[] inputs = {"Kwertyui", "vhnKHhbhgty", "kjhgftv"};
         String regex = "^(?=.*[A-Z]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         if (pattern.matcher(password2).matches()) {
