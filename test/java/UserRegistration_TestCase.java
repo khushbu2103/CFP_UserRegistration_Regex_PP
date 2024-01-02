@@ -31,4 +31,9 @@ public class UserRegistration_TestCase {
     {
         Assert.assertTrue(Validation.preDefinedPasswordRule2());
     }
+    @Test
+    public void getPassWordValidation3()
+    {
+        Assert.assertTrue(Validation.preDefinedPasswordRule3());
+    }
 }

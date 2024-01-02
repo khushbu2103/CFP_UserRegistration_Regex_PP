@@ -1,5 +1,4 @@
 package org.example;
-
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -14,7 +13,8 @@ class UserRegistration {
                 "3.email validation\n" +
                 "4.pre defined mobile number validation\n" +
                 "5.predefined password min 8 char\n" +
-                "6.predefined password min 8 char, atleast 1 uppercase");
+                "6.predefined password min 8 char, atleast 1 uppercase\n" +
+                "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric");
         int option = sc.nextInt();
         int choice;
         do {
@@ -37,6 +37,9 @@ class UserRegistration {
                 case 6:
                     ob.preDefinedPasswordRule2();
                     break;
+                case 7:
+                    ob.preDefinedPasswordRule3();
+                    break;
                 default:
                     break;
             }
@@ -47,7 +50,8 @@ class UserRegistration {
                     "3.email validation\n" +
                     "4.pre defined mobile number validation\n" +
                     "5.predefined password min 8 char\n" +
-                    "6.predefined password min 8 char, atleast 1 uppercase");
+                    "6.predefined password min 8 char, atleast 1 uppercase\n" +
+                    "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -139,5 +143,20 @@ public class Validation {
             System.out.println(password2 + ": Invalid password.");
         }
         return Pattern.matches(regex, password2);
+    }
+    public static boolean preDefinedPasswordRule3()
+    {
+        String password3 = "K9wertyui";
+        //String[] inputs = {"K9wertyui", "vhn9KHhbh", "kjhgftv"};
+        String regex = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(password3).matches()) {
+            System.out.println( password3 + ": Valid password!");
+        }
+        else
+        {
+            System.out.println(password3 + ": Invalid password.");
+        }
+        return Pattern.matches(regex, password3);
     }
 }
