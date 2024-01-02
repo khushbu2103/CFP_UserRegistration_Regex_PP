@@ -7,4 +7,8 @@ public class UserRegistration_TestCase {
     public void getFirstNameValidation() {
         Assert.assertTrue(Validation.firstNameValidation());
     }
+    @Test
+    public void getLastNameValidation() {
+        Assert.assertTrue(Validation.lastNameValidation());
+    }
 }
