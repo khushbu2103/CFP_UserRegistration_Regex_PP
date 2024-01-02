@@ -46,8 +46,14 @@ public class UserRegistration_TestCase {
     @Test
     public void getEmailSamplesValidation()
     {
-        assertTrue(Validation.emailSamplesValidation());
-//        assertFalse(Validation.isValidEmail("yhz.out&kl.co.in"));
-//        assertFalse(Validation.isValidEmail("abc.ykj@bl.co.ik"));
+        Assert.assertTrue(Validation.emailSamplesValidation());
+    }
+    @Test
+    public void getMultipleEmailValidation()
+    {
+        Assert.assertTrue(Validation.multipleEmailValidation("abc.xyz@bl.co.in"));
+        Assert.assertFalse(Validation.multipleEmailValidation("abm.xyz@bl.co.in"));
+        Assert.assertFalse(Validation.multipleEmailValidation("abc.xyz@bl.co"));
+
     }
 }

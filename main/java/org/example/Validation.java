@@ -16,7 +16,9 @@ class UserRegistration {
                 "5.predefined password min 8 char\n" +
                 "6.predefined password min 8 char, atleast 1 uppercase\n" +
                 "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric\n" +
-                "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char");
+                "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char\n" +
+                "9.email samples validation\n" +
+                "10.multiple email validation with parameterised test");
         int option = sc.nextInt();
         int choice;
         do {
@@ -48,6 +50,9 @@ class UserRegistration {
                 case 9:
                     ob.emailSamplesValidation();
                     break;
+                case 10:
+                    ob.multipleEmailValidation("abc.xyz@bl.co.ii");
+                    break;
                 default:
                     break;
             }
@@ -60,7 +65,9 @@ class UserRegistration {
                     "5.predefined password min 8 char\n" +
                     "6.predefined password min 8 char, atleast 1 uppercase\n" +
                     "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric\n" +
-                    "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char");
+                    "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char\n" +
+                    "9.email samples validation\n" +
+                    "10.multiple email validation with parameterised test");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -197,6 +204,20 @@ public class Validation {
             }
         }
         return true;
+    }
+    public static boolean multipleEmailValidation(String email)
+    {
+        //String[] inputs = {"abc.xyz@bl.co.in", "yhz.out&kl.co.in", "abc.ykj@bl.co.ik"};
+        String regex = "^abc\\.[A-Za-z]{1,}@bl\\.co\\.[A-Za-z]{2}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(email).matches()) {
+            System.out.println( email + ": Valid email!");
+        }
+        else
+        {
+            System.out.println(email + ": Invalid email!");
+        }
+        return Pattern.matches(regex, email);
     }
 
 }
