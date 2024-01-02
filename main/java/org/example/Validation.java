@@ -1,5 +1,6 @@
 package org.example;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class UserRegistration {
@@ -14,7 +15,8 @@ class UserRegistration {
                 "4.pre defined mobile number validation\n" +
                 "5.predefined password min 8 char\n" +
                 "6.predefined password min 8 char, atleast 1 uppercase\n" +
-                "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric");
+                "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric\n" +
+                "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char");
         int option = sc.nextInt();
         int choice;
         do {
@@ -54,7 +56,8 @@ class UserRegistration {
                     "4.pre defined mobile number validation\n" +
                     "5.predefined password min 8 char\n" +
                     "6.predefined password min 8 char, atleast 1 uppercase\n" +
-                    "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric");
+                    "7.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric\n" +
+                    "8.predefined password min 8 char, atleast 1 uppercase, atleat 1 numeric, one special char");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -178,4 +181,5 @@ public class Validation {
         }
         return Pattern.matches(regex, password4);
     }
+
 }
