@@ -12,7 +12,8 @@ class UserRegistration {
         System.out.println("1.first name validation\n" +
                 "2.last name validation\n" +
                 "3.email validation\n" +
-                "4.pre defined mobile number validation");
+                "4.pre defined mobile number validation\n" +
+                "5.predefined password min 8 char");
         int option = sc.nextInt();
         int choice;
         do {
@@ -29,6 +30,9 @@ class UserRegistration {
                 case 4:
                     ob.preDefinedMobileNumber();
                     break;
+                case 5:
+                    ob.preDefinedPasswordRule1();
+                    break;
                 default:
                     break;
             }
@@ -37,7 +41,8 @@ class UserRegistration {
                     "1.first name validation\n" +
                     "2.last name validation\n" +
                     "3.email validation\n" +
-                    "4.pre defined mobile number validation");
+                    "4.pre defined mobile number validation\n" +
+                    "5.predefined password min 8 char");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -98,5 +103,21 @@ public class Validation {
             System.out.println(mobile + ": Invalid mobile number!");
         }
         return Pattern.matches(regex, mobile);
+    }
+    public static boolean preDefinedPasswordRule1()
+    {
+        String password = "qw9&ertyui";
+        //String[] inputs = {"qwertyui", "vhnhbhgty", "kjhgftv"};
+        String regex = "^.{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(password).matches())
+        {
+            System.out.println( password + ": Valid password!");
+        }
+        else
+        {
+            System.out.println(password + ": Invalid password.");
+        }
+        return Pattern.matches(regex, password);
     }
 }

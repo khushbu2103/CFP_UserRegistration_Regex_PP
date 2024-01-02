@@ -21,4 +21,9 @@ public class UserRegistration_TestCase {
     {
         Assert.assertTrue(Validation.preDefinedMobileNumber());
     }
+    @Test
+    public void getPassWordValidation1()
+    {
+        Assert.assertTrue(Validation.preDefinedPasswordRule1());
+    }
 }
