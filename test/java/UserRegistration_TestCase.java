@@ -16,4 +16,9 @@ public class UserRegistration_TestCase {
     {
         Assert.assertTrue(Validation.emailValidation());
     }
+    @Test
+    public void getMobileNumberValidation()
+    {
+        Assert.assertTrue(Validation.preDefinedMobileNumber());
+    }
 }

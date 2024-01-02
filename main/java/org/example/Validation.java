@@ -11,7 +11,8 @@ class UserRegistration {
         System.out.println("Enter any regex validation");
         System.out.println("1.first name validation\n" +
                 "2.last name validation\n" +
-                "3.email validation");
+                "3.email validation\n" +
+                "4.pre defined mobile number validation");
         int option = sc.nextInt();
         int choice;
         do {
@@ -25,6 +26,9 @@ class UserRegistration {
                 case 3:
                     ob.emailValidation();
                     break;
+                case 4:
+                    ob.preDefinedMobileNumber();
+                    break;
                 default:
                     break;
             }
@@ -32,7 +36,8 @@ class UserRegistration {
             System.out.println("enter 0 to exit.\n" +
                     "1.first name validation\n" +
                     "2.last name validation\n" +
-                    "3.email validation");
+                    "3.email validation\n" +
+                    "4.pre defined mobile number validation");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -78,5 +83,20 @@ public class Validation {
             System.out.println(email + ": Invalid email.");
         }
         return Pattern.matches(regex, email);
+    }
+    public static boolean preDefinedMobileNumber()
+    {
+        String mobile = "91 9460984883";
+        //String[] inputs = {"91 9460984883", "946098488398", "912 7654327654"};
+        String regex = "^[0-9]{2}[ ][0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(mobile).matches()) {
+            System.out.println( mobile + ": Valid mobile number!");
+        }
+        else
+        {
+            System.out.println(mobile + ": Invalid mobile number!");
+        }
+        return Pattern.matches(regex, mobile);
     }
 }
