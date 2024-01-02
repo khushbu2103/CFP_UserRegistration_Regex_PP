@@ -1,6 +1,8 @@
 import org.example.Validation;
 import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 public class UserRegistration_TestCase {
     @Test
@@ -40,5 +42,12 @@ public class UserRegistration_TestCase {
     public void getPassWordValidation4()
     {
         Assert.assertTrue(Validation.preDefinedPasswordRule4());
+    }
+    @Test
+    public void getEmailSamplesValidation()
+    {
+        assertTrue(Validation.emailSamplesValidation());
+//        assertFalse(Validation.isValidEmail("yhz.out&kl.co.in"));
+//        assertFalse(Validation.isValidEmail("abc.ykj@bl.co.ik"));
     }
 }

@@ -45,6 +45,9 @@ class UserRegistration {
                 case 8:
                     ob.preDefinedPasswordRule4();
                     break;
+                case 9:
+                    ob.emailSamplesValidation();
+                    break;
                 default:
                     break;
             }
@@ -180,6 +183,22 @@ public class Validation {
             System.out.println(password4 + ": Invalid email.");
         }
         return Pattern.matches(regex, password4);
+    }
+    public static boolean emailSamplesValidation()
+    {
+        String[] inputs = {"abc.xyz@bl.co.in", "yhz.out&kl.co.in", "abc.ykj@bl.co.ik"};
+        String regex = "^abc\\.[A-Za-z]{1,}@bl\\.co\\.[A-Za-z]{2}$";
+        Pattern pattern = Pattern.compile(regex);
+        for (String input: inputs) {
+            if (pattern.matcher(input).matches()) {
+                System.out.println( input + ": Valid email!");
+            }
+            else
+            {
+                System.out.println(input + ": Invalid email!");
+            }
+        }
+        return true;
     }
 
 }
