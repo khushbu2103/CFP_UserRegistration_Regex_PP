@@ -11,4 +11,9 @@ public class UserRegistration_TestCase {
     public void getLastNameValidation() {
         Assert.assertTrue(Validation.lastNameValidation());
     }
+    @Test
+    public void getEmailValidation()
+    {
+        Assert.assertTrue(Validation.emailValidation());
+    }
 }

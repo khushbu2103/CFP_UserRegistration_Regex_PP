@@ -10,7 +10,8 @@ class UserRegistration {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter any regex validation");
         System.out.println("1.first name validation\n" +
-                "2.last name validation");
+                "2.last name validation\n" +
+                "3.email validation");
         int option = sc.nextInt();
         int choice;
         do {
@@ -21,13 +22,17 @@ class UserRegistration {
                 case 2:
                     ob.lastNameValidation();
                     break;
+                case 3:
+                    ob.emailValidation();
+                    break;
                 default:
                     break;
             }
             System.out.println("Enter your choice");
             System.out.println("enter 0 to exit.\n" +
                     "1.first name validation\n" +
-                    "2.last name validation");
+                    "2.last name validation\n" +
+                    "3.email validation");
             choice = sc.nextInt();
         } while (choice != 0);
     }
@@ -58,5 +63,20 @@ public class Validation {
             System.out.println(lastName + ": Invalid last name!");
         }
         return Pattern.matches(regex, lastName);
+    }
+    public static boolean emailValidation()
+    {
+        String email = "abc.xyz@bl.co.in";
+        // String[] inputs = {"abc.xyz@bl.co.in", "yhz.out&kl.co.in", "abc.ykj@bl.co.ik"};
+        String regex = "^abc\\.[A-Za-z]{1,}@bl\\.co\\.[A-Za-z]{2}$";
+        Pattern pattern = Pattern.compile(regex);
+        if (pattern.matcher(email).matches()) {
+            System.out.println( email + ": Valid email!");
+        }
+        else
+        {
+            System.out.println(email + ": Invalid email.");
+        }
+        return Pattern.matches(regex, email);
     }
 }
